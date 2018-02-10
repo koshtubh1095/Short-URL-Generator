@@ -1,0 +1,65 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<head>
+	<style>
+#data {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: auto;
+}
+
+#data td, #data th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#data tr:nth-child(even){background-color: #f2f2f2;}
+
+#data tr:hover {background-color: #ddd;}
+
+#data th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+</style>
+</head>
+<body>
+<div>
+	<center>
+		<h2>Enter the URL to be shortened</h2>
+		<form action="short_urls/create", method="post">
+			<input type="text", value="", name="original_url"/>
+			<input type="submit" value="Submit">
+		</form>
+	</center>
+</div>
+<div style="margin-left:1144px;">
+	<button class="w3-button w3-black">
+	<%= link_to('Logout', destroy_user_session_path, method: :delete) %> 
+</button>
+	</div>
+
+	<% if @urls.length != 0 %>
+	<table id="data">
+		<tr>
+			<th>Original Url: </th>
+			<th>Short Urls: </th>
+		</tr>
+			<% @urls.each do |u| %>
+		<tr>
+			<td style="width: 700px;"><%= u.original_url %></td>
+			<td>
+				<%= link_to "#{u.short_url}", u.original_url, :target => "_blank"%>
+			</td>
+		</tr>
+			<% end %>
+	</table>
+	<% end %>
+
+</body>
+</html>
