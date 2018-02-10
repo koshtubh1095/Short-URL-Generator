@@ -5,20 +5,18 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version - 2.3.3
 
-* System dependencies
+* I have provided basic login from google and normal sign in sign up flow.
 
-* Configuration
+* Every user can sign in and generate short URLs for any given URL.
 
-* Database creation
+* URLs can be same for different users but not same for one user. In that case the  short URL wont be generated again.
 
-* Database initialization
+* On login the user will land to a page where it will ask for URL to be shortened.
+  Once the user enters the URL he/she will be redirected to a page where the short url will be shown.
 
-* How to run the test suite
+* On seeing the short url you can come back to previous page where all the URLS the particular user has generated will be shown in tabular format.
 
-* Services (job queues, cache servers, search engines, etc.)
+* Not clear with the API part so was not able to implement only the API part.
 
-* Deployment instructions
-
-* ...
